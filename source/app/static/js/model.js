@@ -1,3 +1,4 @@
+// класс, отвечающий за расчет данных
 class Model {
     constructor() {
         this.data = [];

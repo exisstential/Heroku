@@ -1,3 +1,4 @@
+//класс приложения, куда передаются данные с холста и данные модели и обновляются их состояния
 class App {
     constructor(formEl, canvasEl, editorBlock) {
         this.canvas = new CanvasHandler(canvasEl);
@@ -67,7 +68,7 @@ class App {
         this.canvas.generateStartData();
         this.updateInfobar();
     }
-
+// метод загрузки файла
     load_file() {
         let loaderForm = document.createElement('form');
         let fileInput = document.createElement('input');
@@ -127,7 +128,7 @@ class App {
             document.body.removeChild(loaderForm);
         }, 0); 
     }
-    
+  // метод сохранения файла  
     save2file() {
         let data = {};
 
@@ -149,7 +150,7 @@ class App {
 
         this._download(data, 'save.json', 'application/json');
     }
-
+//метод построения графика при помощи библиотеки chart.js
     setChart() {        
         if (this._starPoint && this._storage) {
             let labels = Object.keys(this._storage);
@@ -296,7 +297,7 @@ class App {
 
         file = null;
     }
-
+// метод, где происходит обновление данных и запускается их отрисовка
     _tick() {
         this.raf = requestAnimationFrame(() => {
             if (this.tick > this.steps) {

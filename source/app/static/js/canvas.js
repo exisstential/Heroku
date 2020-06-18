@@ -1,3 +1,4 @@
+// класс для холста рисования
 class CanvasHandler {
     constructor(el) {
         this.data = [];
@@ -171,7 +172,7 @@ class CanvasHandler {
 
         return uint8ca;
     }
-
+// метод отрисовки, используя тип массива Uint8ClampedArray
     draw(uint8ca) {
         this.ctx.putImageData(
             new ImageData(new Uint8ClampedArray(uint8ca), this.ctx.canvas.width, this.ctx.canvas.height), 0, 0
@@ -269,7 +270,7 @@ class CanvasHandler {
             }
         });
     }
-
+// метод, описывающий инструменты для рисования
     mouseDrawing() {
         if (this.tool != 'eraser' && this.tool != 'pen') {
             this.draw(this.data2uint8ca(this.data));
